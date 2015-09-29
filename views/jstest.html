@@ -20,17 +20,20 @@
 				document.getElementById("message").innerHTML=status;
 			}
 			function guessNumber(){
-				var x = prompt("Enter a Number");
-				try{
-					if(x=="") throw "empty";
-					if(isNaN(x)) throw "not a number";
-					x=Number(x)
-					if(x<5) throw "too low";
-					if(x>10) throw "too high";
-				}catch(err){
-					alert("Input is "+err);
-				}finally{
-					alert("End of Try-Catch Statement");
+				var guess = Math.floor((Math.random() * 100)+1);
+				var x = 0;
+				while(x!=guess){
+					x = prompt("Enter a Number");
+					try{
+						if(x=="") throw "empty";
+						if(isNaN(x)) throw "not a number";
+						x=Number(x);
+						if(x<guess) throw "Guess Higher!";
+						if(x>guess) throw "Guess Lower!";
+						if(x==guess) throw "You guessed it correctly!";
+					}catch(err){
+						alert(err);
+					}
 				}
 			}
 		</script>
