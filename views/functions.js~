@@ -1,0 +1,61 @@
+//functions
+//objects
+
+// TWO WAYS OF DECLARING FUNCTION
+//1
+function cube(n){
+	return n*n*n;
+}
+//2
+var cube = function(n){
+    return n*n*n;
+};
+alert(cube(2)); //FUNCTION CALL FOR BOTH DEFINITION
+//alert(func_name(params)));
+
+//functions objects (global or local)
+function foo1(a){
+    a=100;
+    console.log("Inside the function a is " +a);   
+}
+
+function foo2(myObject){
+    myObject.fname="John";
+}
+
+function foo3(myObject){
+    myObject = {fname:"Jane", lname:"Dizon", age:25}
+}
+
+//object initializer
+var person = {
+	fname: "Juan",
+	lname: "Dela Cruz",
+	age: 50
+
+};
+
+//constructor function
+function student(fname, lname, age){
+    this.fname = fname;
+    this.lname = lname;
+    this.age = age;
+    this.changeName = changeName;
+    this.updateAge = updateAge;
+}
+
+function changeName(newFirstName, newLastName){
+    this.fname = newFirstName;
+    this.lname = newLastName;
+}
+
+function updateAge(newAge){
+    this.age = newAge;
+}
+
+/*
+    var student1 = new student("Michael", "V", 40);  
+    var student2 = new student("Andrew", "E", 45);
+    student1;
+    student2;
+*/
